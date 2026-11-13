@@ -16,7 +16,7 @@ test("Portugal is the explicitly creator-supplied answer, separate from sourced 
   const bonus = questions.filter(question => question.creatorSupplied);
   assert.equal(bonus.length, 1);
   assert.equal(bonus[0].options[bonus[0].correct], "Portugal");
-  assert.match(bonus[0].explanation, /could not independently verify/);
+  assert.match(bonus[0].explanation, /ikke kunnet bekræfte/);
   assert.equal(SOURCE_URL, "https://eventzonen.dk/balledj");
 });
 

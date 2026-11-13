@@ -1,85 +1,87 @@
 <!doctype html>
-<html lang="en">
+<html lang="da">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#241336">
-  <meta name="description" content="An unofficial, source-linked DJ Balle quiz with a little too much early-internet energy. Straight outta Silkeborg.">
-  <title>DJ BALLE // The ultimate fan quiz</title>
+  <meta name="description" content="En uofficiel quiz om DJ Balle fra Silkeborg. Otte spørgsmål, synlige kilder og masser af nostalgi fra internettets storhedstid.">
+  <title>DJ BALLE // Den ultimative fanquiz</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23c9ff57'/%3E%3Ccircle cx='32' cy='32' r='24' fill='%23241336'/%3E%3Ccircle cx='32' cy='32' r='8' fill='%23ff8c53'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="./style.css">
   <script type="module" src="./app.js"></script>
 </head>
 <body>
-  <a class="skip" href="#quiz">Skip to quiz</a>
+  <a class="skip" href="#quiz">Hop til quizzen</a>
   <div class="site">
     <header class="masthead">
-      <a class="wordmark" href="./" aria-label="DJ Balle quiz home">balle<span>.net*</span></a>
-      <div class="online"><span></span> SILKEBORG IS ONLINE</div>
-      <button id="motion" class="small-button" type="button" aria-pressed="false">Pause animations</button>
+      <a class="wordmark" href="./" aria-label="DJ Balle-quiz: forsiden">balle<span>.net*</span></a>
+      <div class="online"><span></span> SILKEBORG ER ONLINE</div>
+      <button id="motion" class="small-button" type="button" aria-pressed="false">Sæt animationer på pause</button>
     </header>
     <main>
       <section class="hero" aria-labelledby="title">
         <div>
-          <p class="eyebrow">EST. IN THE DIAL-UP DIMENSION / UNOFFICIAL FAN ZONE</p>
-          <h1 id="title">DJ BALLE<span>KNOW THE DJ.<br>FEEL THE NOSTALGIA.</span></h1>
-          <p class="hero-copy">Straight outta Silkeborg. Straight into your browser.<br>How well do you know the man behind the music?</p>
-          <div class="tags"><span>8 QUESTIONS</span><span>NO DOWNLOADS</span><span>100% RETRO ENERGY</span></div>
+          <p class="eyebrow">DIREKTE FRA MODEMMETS TIDSALDER / UOFFICIEL FANSIDE</p>
+          <h1 id="title">DJ BALLE<span>KEND DIN DJ.<br>MÆRK NOSTALGIEN.</span></h1>
+          <p class="hero-copy">Direkte fra Silkeborg. Lige ind i din browser.<br>Hvor godt kender du manden bag musikken?</p>
+          <div class="tags"><span>8 SPØRGSMÅL</span><span>INGEN DOWNLOADS</span><span>100% RETROENERGI</span></div>
         </div>
-        <div class="record-art" aria-hidden="true">
-          <div class="orbit-text">THE SILKEBORG SESSIONS / VOL. 01</div>
-          <div class="record"><div class="record-label">DJ<br><b>BALLE</b><i>33⅓ RPM</i></div></div>
-          <div class="sticker">YOU'VE GOT<br><strong>GOOD TASTE!</strong></div>
-          <span class="spark s1">✦</span><span class="spark s2">✧</span>
+        <div class="hero-art">
+          <div class="record" aria-hidden="true"><div class="record-label">DJ<br><b>BALLE</b><i>33⅓ RPM</i></div></div>
+          <figure class="polaroid">
+            <img src="https://res.cloudinary.com/db2o7exxf/image/upload/f_auto,q_auto/v1550570433/kzygwtumyyppf224aqu6" alt="BalleDj på sit profilbillede fra Eventzonen" width="500" height="375" fetchpriority="high" referrerpolicy="no-referrer">
+            <figcaption><strong>DJ Balle / Silkeborg</strong><a href="https://eventzonen.dk/balledj" target="_blank" rel="noopener noreferrer">Profilfoto: Eventzonen ↗</a></figcaption>
+          </figure>
+          <span class="spark s1" aria-hidden="true">✦</span><span class="spark s2" aria-hidden="true">✧</span>
         </div>
       </section>
-      <div class="ticker" aria-hidden="true"><div>★ WELCOME TO THE FAN ZONE ★ PLEASE DON'T CALL, I'M ON THE INTERNET ★ TEST YOUR BALLE KNOWLEDGE ★ POWERED BY GOOD VIBES &amp; ACTUAL SOURCES ★ WELCOME TO THE FAN ZONE ★ PLEASE DON'T CALL, I'M ON THE INTERNET ★</div></div>
+      <div class="ticker" aria-hidden="true"><div>★ VELKOMMEN TIL FANSIDEN ★ RING IKKE, JEG ER PÅ INTERNETTET ★ TEST DIN BALLE-VIDEN ★ DREVET AF GOD STEMNING &amp; RIGTIGE KILDER ★ VELKOMMEN TIL FANSIDEN ★ RING IKKE, JEG ER PÅ INTERNETTET ★</div></div>
       <div class="desktop">
         <section id="quiz" class="window quiz-window" aria-labelledby="window-title">
           <div class="titlebar"><span id="window-title"><span aria-hidden="true">▣</span> balle_quiz.exe</span><span aria-hidden="true">_ □ ×</span></div>
-          <div class="window-menu"><span>File</span><span>Play</span><a href="#sources">Sources</a><span class="version">v.2004 / actually made in 2026</span></div>
+          <div class="window-menu"><span>Filer</span><span>Spil</span><a href="#sources">Kilder</a><span class="version">v.2004 / lavet i 2026</span></div>
           <div class="quiz-content">
-            <div class="quiz-top"><span id="track">READY WHEN YOU ARE</span><span id="score">SCORE: 00</span></div>
-            <div id="progress" class="progress" role="progressbar" aria-label="Quiz completion" aria-valuemin="0" aria-valuemax="8" aria-valuenow="0"><span></span></div>
+            <div class="quiz-top"><span id="track">KLAR, NÅR DU ER</span><span id="score">POINT: 00</span></div>
+            <div id="progress" class="progress" role="progressbar" aria-label="Besvarede spørgsmål" aria-valuemin="0" aria-valuemax="8" aria-valuenow="0"><span></span></div>
             <div id="stage">
-              <p class="mini-label">YOUR NEXT INTERNET OBSESSION</p>
-              <h2 tabindex="-1">Are you a true<br><em>Balle connoisseur?</em></h2>
-              <p class="intro">Eight questions. Three choices. One Silkeborg DJ.<br>Drop the needle and see how much you really know.</p>
-              <button id="start" type="button" class="primary">LET'S PLAY <span aria-hidden="true">↗</span></button>
-              <p class="fineprint">No timer. No pressure. Just you and the facts.</p>
+              <p class="mini-label">DIN NÆSTE INTERNETBESÆTTELSE</p>
+              <h2 tabindex="-1">Er du en ægte<br><em>Balle-kender?</em></h2>
+              <p class="intro">Otte spørgsmål. Tre svarmuligheder. Én DJ fra Silkeborg.<br>Sæt nålen i rillen, og test din viden.</p>
+              <button id="start" type="button" class="primary">START QUIZZEN <span aria-hidden="true">↗</span></button>
+              <p class="fineprint">Intet tidspres. Bare dig og de gode historier.</p>
             </div>
-            <noscript><p>This quiz needs JavaScript. You can still read the linked research and provenance below.</p></noscript>
+            <noscript><p>Quizzen kræver JavaScript. Du kan stadig læse om kilderne nedenfor.</p></noscript>
           </div>
-          <div class="statusbar"><span id="status">● Ready to drop the needle</span><span>Connection: good vibes</span></div>
+          <div class="statusbar"><span id="status">● Klar til at sætte pladen på</span><span>Forbindelse: god stemning</span></div>
         </section>
-        <aside class="sidebar" aria-label="About this quiz">
+        <aside class="sidebar" aria-label="Om quizzen">
           <section class="window player">
-            <div class="titlebar"><span>♫ vibe_player.mp3</span><span aria-hidden="true">×</span></div>
-            <div class="player-screen"><span class="player-time">00:00</span><div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p>DJ BALLE — QUIZ MODE</p></div>
+            <div class="titlebar"><span>♫ stemning.mp3</span><span aria-hidden="true">×</span></div>
+            <div class="player-screen"><span class="player-time">00:00</span><div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p>DJ BALLE — QUIZTILSTAND</p></div>
             <div class="player-bottom"><span>STEREO / 128 KBPS*</span><span>◀◀ ▷ ▶▶</span></div>
-            <p class="player-note">*Purely decorative. The vibes are silent.</p>
+            <p class="player-note">*Kun til pynt. Ingen lyd på siden.</p>
           </section>
           <section class="note">
             <span class="pin" aria-hidden="true">+</span>
-            <p class="mini-label">A NOTE FROM THE WEBMASTER</p>
-            <h2>Old-school look.<br>Real-world facts.</h2>
-            <p>Our subject is <b>BalleDj, listed in Silkeborg on Eventzonen</b>. Not the Norwegian artist with a similar name.</p>
-            <p>Seven questions follow his public profile. The “Portugal” bonus comes from the quiz creator.</p>
-            <a href="#sources">Check the liner notes <span aria-hidden="true">↗</span></a>
+            <p class="mini-label">EN HILSEN FRA WEBMASTEREN</p>
+            <h2>Gammeldags stil.<br>Rigtige kilder.</h2>
+            <p>Quizzen handler om <b>BalleDj med hjemby Silkeborg på Eventzonen</b>. Ikke den norske kunstner med et lignende navn.</p>
+            <p>Syv spørgsmål bygger på hans offentlige profil. Bonussen om “Portugal” kommer fra quizbestilleren.</p>
+            <a href="#sources">Læs om kilderne <span aria-hidden="true">↗</span></a>
           </section>
-          <div class="web-badges" aria-label="Site features"><span>HTML<br><b>POWERED</b></span><span>BEST VIEWED<br><b>WITH YOUR EYES</b></span><span>NO<br><b>COOKIES</b></span></div>
+          <div class="web-badges" aria-label="Sidens egenskaber"><span>BYGGET MED<br><b>HTML</b></span><span>SES BEDST<br><b>MED ØJNENE</b></span><span>INGEN<br><b>COOKIES</b></span></div>
         </aside>
       </div>
       <section id="sources" class="sources" aria-labelledby="sources-title">
-        <div><p class="eyebrow">THE LINER NOTES</p><h2 id="sources-title">Show your sources.</h2></div>
+        <div><p class="eyebrow">DET MED SMÅT</p><h2 id="sources-title">Kilderne på bordet.</h2></div>
         <div>
-          <p><b>Online source:</b> <a href="https://eventzonen.dk/balledj" target="_blank" rel="noopener noreferrer">BalleDj’s Eventzonen profile ↗</a>, accessed 13 November 2026. The profile explicitly lists Silkeborg as his hometown. Questions describe what the profile says; its biographical statements are self-reported, not independently corroborated.</p>
-          <p><b>Creator-supplied bonus:</b> “Which song does he love?” → “Portugal”. Supplied by the person commissioning this quiz; not independently verified online. The other two song titles are distractors, not claims about his preferences.</p>
-          <p class="fineprint">Unofficial fan project. Not affiliated with DJ Balle or Eventzonen. No recordings or third-party photos used. *balle.net is a decorative retro wordmark, not this site's address.</p>
+          <p><b>Onlinekilde:</b> <a href="https://eventzonen.dk/balledj" target="_blank" rel="noopener noreferrer">BalleDjs profil på Eventzonen ↗</a>, læst 13. november 2026. Profilen angiver Silkeborg som hjemby. Spørgsmålene gengiver profilens oplysninger; de biografiske oplysninger er selvrapporterede og ikke bekræftet af uafhængige kilder.</p>
+          <p><b>Bonus fra quizbestilleren:</b> “Hvilken sang elsker han?” → “Portugal”. Svaret er oplyst af personen, der bestilte quizzen, og er ikke uafhængigt bekræftet online. De to andre sangtitler er forkerte svarmuligheder, ikke påstande om hans musiksmag.</p>
+          <p class="fineprint">Uofficielt fanprojekt. Ingen tilknytning til DJ Balle eller Eventzonen. Profilfotoet indlæses fra Eventzonens billedudbyder; rettighederne tilhører den oprindelige rettighedshaver. Ingen musikoptagelser er brugt. *balle.net er et dekorativt retrologo, ikke sidens adresse.</p>
         </div>
       </section>
     </main>
-    <footer><span>© 2026 THE UNOFFICIAL BALLE FAN ZONE</span><span>MADE FOR THE WORLD WIDE WEB <span aria-hidden="true">✦</span></span><a href="https://github.com/jbacim/dj-balle-quiz">VIEW SOURCE ↗</a></footer>
+    <footer><span>© 2026 DEN UOFFICIELLE BALLE-FANSIDE</span><span>LAVET TIL DET STORE INTERNET <span aria-hidden="true">✦</span></span><a href="https://github.com/jbacim/dj-balle-quiz">SE KODE ↗</a></footer>
   </div>
 </body>
 </html>

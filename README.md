@@ -1,6 +1,6 @@
 # DJ Balle retro quiz
 
-An unofficial, early-2000s-inspired static fan quiz about **BalleDj, whose Eventzonen profile lists Silkeborg as his hometown**. Built with HTML, CSS and browser-native JavaScript modules; no build step or runtime dependencies.
+An unofficial, Danish-language, early-2000s-inspired static fan quiz about **BalleDj, whose Eventzonen profile lists Silkeborg as his hometown**. Built with HTML, CSS and browser-native JavaScript modules; no build step or runtime dependencies.
 
 ## Play
 
@@ -14,11 +14,11 @@ Seven questions paraphrase the public [BalleDj Eventzonen profile](https://event
 
 The eighth question, **"Which song does he love?"**, has the answer **"Portugal"**, as explicitly supplied by the person commissioning the quiz. It is labelled creator-supplied and not independently verified online. The other two options are distractors. No artist attribution is invented for "Portugal".
 
-The quiz displays explanations and source links immediately after each answer and in a final review. No third-party photos or music recordings are included. Google Fonts supplies optional typefaces with system-font fallbacks. The animated player is decorative, not a functional audio player; the wordmark is decorative, not a domain claim.
+The quiz displays explanations and source links immediately after each answer and in a final review. A polaroid-style portrait embeds the profile photo directly from Eventzonen's Cloudinary image provider, with a visible source link, descriptive Danish alt text, reserved dimensions, and no referrer. The image is not copied into this repository; its original rights holder retains the rights. No music recordings are included. Google Fonts supplies optional typefaces with system-font fallbacks. The animated player is decorative, not a functional audio player; the wordmark is decorative, not a domain claim.
 
 ## Behaviour and accessibility
 
-Eight questions, three options each, one scored answer per question, explicit next-question controls, a final score, answer review and restart. Native buttons support keyboards, feedback is announced through a live region, and headings receive focus on transitions. Animations can be paused and respect `prefers-reduced-motion`. Layout adapts to mobile. No cookies, analytics, accounts, or persistent scores.
+Eight questions, three options each, one scored answer per question, explicit next-question controls, a final score, answer review and restart. All visitor-facing copy and accessible labels are Danish (`lang="da"`). Native buttons support keyboards, feedback is announced through a live region, and headings receive focus on transitions. Animations can be paused and respect `prefers-reduced-motion`. The responsive layout is checked at 320, 375, 768 and 1280 pixels without horizontal overflow, with answer targets at least 44 pixels tall. No cookies, analytics, accounts, or persistent scores.
 
 ## Checks
 
