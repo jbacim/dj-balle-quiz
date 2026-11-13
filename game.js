@@ -1,4 +1,5 @@
 export const SOURCE_URL = "https://eventzonen.dk/balledj";
+export const BOOKING_URL = "https://www.123festmusik.dk/djvenga";
 
 export const questions = [
   {
@@ -26,9 +27,9 @@ export const questions = [
     explanation: "Han fortæller, at en del af tiden som DJ var i Norge og Sverige. Det er BalleDj fra Silkeborg, der beskriver sin karriere, ikke den norske kunstner DJ Balle.",
   },
   {
-    question: "Hvilket spillested nævner han i forbindelse med fredagsbal?",
-    options: ["Skals Kro", "Royal Arena", "Vega"],
-    correct: 0,
+    question: "Hvilket kroarrangement nævner BalleDJ selv som en del af sin karriere?",
+    options: ["Lørdagsbal på Ans Kro", "Halbal i Them", "Fredagsbal på Skals Kro", "Søndagsdans på Svostrup Kro"],
+    correct: 2,
     explanation: "Profilen nævner fredagsbal på Skals Kro blandt de steder og arrangementer, han har spillet til.",
   },
   {
@@ -42,6 +43,53 @@ export const questions = [
     options: ["Seks", "Seksten", "Tres"],
     correct: 1,
     explanation: "Profilen fortæller om 16 bryllupper i 2024 samt en del andre fester. Tallet gælder 2024, ikke hans aktuelle antal bookinger.",
+  },
+  {
+    question: "Hvad hedder det mobile diskotek, som BalleDJ er tilknyttet på sin anden bookingprofil?",
+    options: ["Atlantis", "Apollo", "ODEON", "Studio Balle"],
+    correct: 2,
+    sourceUrl: BOOKING_URL,
+    sourceLabel: "BalleDJ på 123festmusik",
+    explanation: "På 123festmusik hedder profilen “Mobil Diskotek ODEON - BalleDJ” og angiver Silkeborg som hjemby.",
+  },
+  {
+    question: "Hvor lang tid før festen oplyser han, at udstyret stilles op?",
+    options: ["30 minutter", "1 time", "1½ time", "2½ time"],
+    correct: 2,
+    sourceUrl: BOOKING_URL,
+    sourceLabel: "BalleDJ på 123festmusik",
+    explanation: "Bookingprofilen hos 123festmusik oplyser, at udstyret stilles op 1,5 time før. Oplysningen kan ændre sig.",
+  },
+  {
+    question: "Hvilken type fest nævnes ikke eksplicit som et af BalleDJs specialer i profilteksten?",
+    options: ["Sølvbryllup", "80’er-fest", "Firmafest", "Studenterfest"],
+    correct: 3,
+    explanation: "Profilteksten nævner sølvbryllupper, 80’er-fester og firmafester, men ikke studenterfester i opremsningen af specialer. Det betyder ikke, at han ikke spiller til studenterfester.",
+  },
+  {
+    question: "Hvad hedder et BalleDJ-mix, der kan spores tilbage til december 2011?",
+    options: ["Den Store Balleblanding", "Lille Nat Mix", "ODEON After Dark", "Skals Kro Megamix"],
+    correct: 1,
+    creatorSupplied: true,
+    explanation: "“Lille Nat Mix” og dateringen til december 2011 er oplyst af quizbestilleren. Vi har ikke kunnet bekræfte oplysningerne uafhængigt online.",
+  },
+  {
+    question: "Hvad hedder DJ Balle?",
+    options: ["Lars", "Jens", "Emil", "Marcus"],
+    correct: 0,
+    explanation: "Anmeldelserne på BalleDJs profil på Eventzonen omtaler ham som Lars.",
+  },
+  {
+    question: "Hvilken særlig fødselsdag spillede Lars til ifølge en anmeldelse fra 2020?",
+    options: ["En dobbelt 70-års fødselsdag", "En samlet 80-års fødselsdag", "En samlet 90-års fødselsdag", "En 100-års fødselsdag"],
+    correct: 2,
+    explanation: "En anmeldelse fra august 2020 fortæller, at Lars spillede til et pars samlede 90-års fødselsdagsfest.",
+  },
+  {
+    question: "Hvilken bedømmelse havde BalleDJ på Eventzonen, da siden blev læst den 13. november 2026?",
+    options: ["4,2", "4,5", "4,8", "5,0"],
+    correct: 2,
+    explanation: "Eventzonen viste 4,8 ud af 5 baseret på fem anmeldelser ved opslaget den 13. november 2026. Bedømmelser kan ændre sig; den anden bookingprofil har sin egen bedømmelse.",
   },
   {
     question: "Hvilken sang elsker han?",

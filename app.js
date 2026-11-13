@@ -10,8 +10,10 @@ let game = createGame();
 function sourceMarkup(question) {
   return question.creatorSupplied
     ? '<span class="source-label">KILDE: QUIZBESTILLEREN / IKKE BEKRÆFTET ONLINE</span>'
-    : `<a href="${SOURCE_URL}" target="_blank" rel="noopener noreferrer">Kilde: BalleDj på Eventzonen ↗</a>`;
+    : `<a href="${question.sourceUrl ?? SOURCE_URL}" target="_blank" rel="noopener noreferrer">Kilde: ${question.sourceLabel ?? "BalleDj på Eventzonen"} ↗</a>`;
 }
+
+progress.setAttribute("aria-valuemax", questions.length);
 
 function updateStats() {
   score.textContent = `POINT: ${String(getScore(game)).padStart(2, "0")}`;
@@ -29,7 +31,7 @@ function renderQuestion() {
   track.textContent = `SPØRGSMÅL ${String(game.index + 1).padStart(2, "0")} / ${String(questions.length).padStart(2, "0")}`;
   status.textContent = "● Vælg dit svar. Giv den gas!";
   stage.innerHTML = `
-    <p class="mini-label">${question.creatorSupplied ? "BONUS FRA QUIZBESTILLEREN" : "FRA DEN OFFENTLIGE PROFIL"}</p>
+    <p class="mini-label">${question.creatorSupplied ? "OPLYST AF QUIZBESTILLEREN" : "FRA EN OFFENTLIG PROFIL"}</p>
     <h2 class="question-heading" tabindex="-1">${question.question}</h2>
     <div class="answers" role="group" aria-label="Vælg ét svar">
       ${question.options.map((option, index) => `<button type="button" class="answer" data-option="${index}"><span class="letter" aria-hidden="true">${String.fromCharCode(65 + index)}</span><span>${option}</span><span class="result-icon"></span></button>`).join("")}
@@ -76,12 +78,12 @@ function renderResult() {
   const total = getScore(game);
   track.textContent = "TAK FOR DANSEN / QUIZ SLUT";
   status.textContent = "● Tak for besøget på fansiden.";
-  const title = total === questions.length ? "Du er en ægte Balle-kender!" : total >= 5 ? "Du har styr på pladerne!" : "Alle fans starter et sted.";
+  const title = total === questions.length ? "Du er en ægte Balle-kender!" : total / questions.length >= 5 / 8 ? "Du har styr på pladerne!" : "Alle fans starter et sted.";
   stage.innerHTML = `
     <p class="mini-label">DIT ENDELIGE MIX</p>
     <h2 tabindex="-1">${title}</h2>
     <p class="result-score">${total}<span style="font-size:30px;letter-spacing:-1px"> / ${questions.length}</span></p>
-    <p class="intro">Syv spørgsmål fra profilen + én bonus fra quizbestilleren.<br>God stemning, uanset hvor mange point du fik.</p>
+    <p class="intro">Spørgsmål fra offentlige profiler og quizbestilleren.<br>God stemning, uanset hvor mange point du fik.</p>
     <button type="button" class="primary" id="restart">SPIL IGEN ↻</button>
     <details class="review"><summary>SE DINE SVAR &amp; KILDER</summary><ol>${questions.map((question, index) => `
       <li><b>${question.question}</b><p>${game.answers[index] === question.correct ? "Rigtigt" : "Forkert"} · Dit svar: ${question.options[game.answers[index]]}<br>Rigtigt svar: ${question.options[question.correct]}</p><p>${question.explanation}</p><p class="review-source">${sourceMarkup(question)}</p></li>`).join("")}</ol></details>`;

@@ -2,33 +2,33 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { SOURCE_URL, questions, createGame, answerQuestion, nextQuestion, getScore } from "./game.js";
 
-test("eight questions have three distinct options and a valid correct answer", () => {
-  assert.equal(questions.length, 8);
+test("questions have distinct options and a valid correct answer", () => {
+  assert.equal(questions.length, 15);
   for (const question of questions) {
-    assert.equal(new Set(question.options).size, 3);
+    assert.ok([3, 4].includes(question.options.length));
+    assert.equal(new Set(question.options).size, question.options.length);
     assert.ok(Number.isInteger(question.correct));
-    assert.ok(question.correct >= 0 && question.correct < 3);
+    assert.ok(question.correct >= 0 && question.correct < question.options.length);
     assert.ok(question.explanation.length > 30);
   }
 });
 
 test("Portugal is the explicitly creator-supplied answer, separate from sourced facts", () => {
   const bonus = questions.filter(question => question.creatorSupplied);
-  assert.equal(bonus.length, 1);
-  assert.equal(bonus[0].options[bonus[0].correct], "Portugal");
-  assert.match(bonus[0].explanation, /ikke kunnet bekræfte/);
+  assert.deepEqual(bonus.map(question => question.options[question.correct]).sort(), ["Lille Nat Mix", "Portugal"]);
+  for (const question of bonus) assert.match(question.explanation, /ikke kunnet bekræfte/);
   assert.equal(SOURCE_URL, "https://eventzonen.dk/balledj");
 });
 
-test("a perfect round reaches completion and scores eight", () => {
+test("a perfect round reaches completion and scores every point", () => {
   let game = createGame();
   for (const question of questions) {
     game = answerQuestion(game, question.correct);
     game = nextQuestion(game);
   }
   assert.equal(game.finished, true);
-  assert.equal(getScore(game), 8);
-  assert.equal(game.answers.length, 8);
+  assert.equal(getScore(game), questions.length);
+  assert.equal(game.answers.length, questions.length);
   assert.throws(() => answerQuestion(game, 0));
   assert.throws(() => nextQuestion(game));
 });
@@ -37,12 +37,31 @@ test("wrong and mixed rounds score correctly", () => {
   for (const expected of [0, 3, 7]) {
     let game = createGame();
     questions.forEach((question, index) => {
-      game = answerQuestion(game, index < expected ? question.correct : (question.correct + 1) % 3);
+      game = answerQuestion(game, index < expected ? question.correct : (question.correct + 1) % question.options.length);
       game = nextQuestion(game);
     });
+
     assert.equal(getScore(game), expected);
     assert.equal(game.finished, true);
   }
+});
+
+test("all requested four-choice questions have the specified correct answer", () => {
+  for (const answer of ["ODEON", "Fredagsbal på Skals Kro", "1½ time", "Studenterfest", "Lille Nat Mix", "Lars", "En samlet 90-års fødselsdag", "4,8"]) {
+    const matches = questions.filter(question => question.options[question.correct] === answer);
+    assert.equal(matches.length, 1, `${answer} must appear once`);
+    assert.equal(matches[0].options.length, 4);
+  }
+});
+
+test("the fourth answer is accepted for a four-option question", () => {
+  let game = createGame();
+  while (questions[game.index].options.length !== 4) {
+    game = nextQuestion(answerQuestion(game, 0));
+  }
+  game = answerQuestion(game, 3);
+  assert.equal(game.answers.at(-1), 3);
+  assert.throws(() => answerQuestion(createGame(), 3));
 });
 
 test("cannot skip, double-answer, or pass invalid answers", () => {
